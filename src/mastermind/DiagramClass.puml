@@ -1,0 +1,40 @@
+@startuml
+skin rose
+
+class MasterMind {
+  + {static} main()
+}
+
+MasterMind *-->"1" Board
+
+MasterMind --> GestorIO
+MasterMind *-->"1" Player
+MasterMind *-->"1" Attempt
+
+class Board {
+  + bePlayable()
+  + putCombination()
+}
+
+Board *-->"1" Combination
+Board --> GestorIO
+
+class Combination {
+  + generateCombination()
+  + verifyCombination()
+  + isAValidCombination()
+}
+
+class Player {
+  + proposeCombination()
+}
+
+class Attempt {
+  + nexAttempt()
+  + hasEnoughAttempts()
+  + actualAttempt()
+}
+
+Attempt --> GestorIO
+
+@enduml
