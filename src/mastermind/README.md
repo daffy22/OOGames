@@ -1,6 +1,41 @@
-# 🎯 Mastermind - Console Game 🎨  
+# 🎯 Mastermind - Console Game 🎨
 
-Mastermind is a **code-breaking** game where you must guess a **secret combination of colors** within **10 attempts**.  
+Mastermind is a **code-breaking** game where you must guess a **secret combination of colors** within **10 attempts**.
+
+## 📌 Diagram Class
+
+Below is the class diagram for the Mastermind game:
+
+![Class Diagram](../assets/diagram-class-mm.png)
+
+### 📖 Explanation of the Class Diagram
+
+- **MasterMind** (Main Class)
+  - The entry point of the game, containing the `main()` method.
+  - It has associations with `Board`, `Player`, `Attempt`, and `GestorIO`.
+
+- **Board**
+  - Manages the game board logic.
+  - It ensures the game is playable (`bePlayable()`) and manages color combinations (`putCombination()`).
+  - Contains a **Composition relationship** with `Combination`.
+
+- **Combination**
+  - Handles the secret combination generation (`generateCombination()`).
+  - Verifies if a proposed combination is correct (`verifyCombination()`).
+  - Checks if a given combination is valid (`isAValidCombination()`).
+
+- **Player**
+  - Represents the player and their ability to propose a combination (`proposeCombination()`).
+
+- **Attempt**
+  - Manages the number of attempts (`actualAttempt()`, `hasEnoughAttempts()`).
+  - Tracks and updates each attempt (`nextAttempt()`).
+
+- **GestorIO**
+  - Handles user input and output operations.
+  - Connected to multiple components to manage communication between the user and the game logic.
+
+This structure ensures that the game follows a **modular and object-oriented** approach, making it easy to maintain and extend. 🚀🎮
 
 ## 🕹️ How to Play  
 
