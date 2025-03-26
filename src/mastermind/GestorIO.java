@@ -3,7 +3,7 @@ package mastermind;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
-class GestorIO {
+public class GestorIO {
 
     private static BufferedReader b = new BufferedReader(new InputStreamReader(System.in));
 
